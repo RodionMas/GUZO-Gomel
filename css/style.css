@@ -1,0 +1,894 @@
+* {
+    box-sizing: border-box;
+    /*Свойства width и height включают
+	 в себя значения полей и границ, но не отступов (margin).*/
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.progress {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 6px;
+    background-color: #3498db;
+    z-index: 3;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+/*кнопка вверх */
+.top__button{
+	bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+}
+.top__button:hover{
+	 filter: grayscale(0);
+    transition: filter .2s .2s;
+}
+/*.organisation__item {
+    max-width: 350px;
+    color: #fff;
+    filter: grayscale(1);
+}
+
+.organisation__item:hover {
+    filter: grayscale(0);
+    transition: filter .2s .2s;
+}
+*/
+.header__top {
+    background-color: #3498db;
+    /*#7ed1d3, #afcde7*/
+}
+
+.header__btn {
+    float: right;
+    line-height: 36px;
+    font-family: 'Roboto', sans-serif;
+    color: #1b1b1b;
+    background-color: #7f8c8d;
+    padding: 5px 20px 4px 50px;
+    font-size: 16px;
+}
+
+.header__btn:before {
+    font-family: 'icomoon' !important;
+    /*обязательное поле для того чтобы появился значек телефона*/
+    content: "\f0fa";
+    position: absolute;
+    left: -11px;
+    color: #1b1b1b;
+    position: relative;
+}
+
+.header__contacts:after {
+    /*решаем проблему с float*/
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.header__phone,
+.header__email {
+    color: #1b1b1b;
+    letter-spacing: 0.25px;
+    /*интервал между буквами*/
+    line-height: 45px;
+    position: relative;
+}
+
+.header__phone {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.header__phone:before {
+    font-family: 'icomoon' !important;
+    /*обязательное поле для того чтобы появился значек телефона*/
+    content: "\f095";
+    position: absolute;
+    left: 0;
+    color: #1b1b1b;
+}
+
+.header__email {
+    padding-left: 24px;
+}
+
+.header__email:before {
+    font-family: 'icomoon' !important;
+    /*обязательное поле для того чтобы появился значек телефона*/
+    content: "\f003";
+    position: absolute;
+    left: 0;
+    color: #1b1b1b;
+}
+
+.header__content {
+    padding: 34px 0px 23px;
+}
+
+.header__content-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    /*запись в одну строку*/
+    display: inline-block;
+}
+
+.menu a {
+    color: #323232;
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    padding: 0px 13px;
+    transition: all 0.3s;
+}
+
+.menu a:hover {
+    border-color: #3498db;
+}
+
+.menu li+li {
+    /* "+" ставится затем, чтобы убрать с первой ссылки padding*/
+    padding-left: 10px;
+}
+
+#modal {
+    display: none;
+}
+.slider {
+    background-image: url(../img/slider-fone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 780px;
+    background-attachment: fixed;
+}
+
+.slider__item-content {
+    text-align: center;
+    padding-top: 110px;
+    margin: 0 auto;
+}
+
+.slider__title {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.slider__text {
+    line-height: 30px;
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.default-btn {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 30px 8px 24px;
+    border: 1px solid #3498db;
+    border-right-width: 20px;
+    position: relative;
+    z-index: 2;
+    outline: none;
+}
+
+.default-btn:after {
+    font-family: 'icomoon' !important;
+    content: "\f105";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -12px;
+}
+
+.slider__inner {
+    position: relative;
+}
+
+.slick-btn {
+    position: absolute;
+    top: 70%;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    background-color: #3498db;
+}
+
+.slick-disabled.slick-btn {
+    cursor: default;
+    background-color: transparent;
+}
+
+.slick-btn:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+}
+
+.slick-next:before {
+    content: "\f105";
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev:before {
+    content: "\f104";
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.services {
+    padding: 50px 0px 30px;
+}
+
+.services__top,
+.news__top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.services__title-box,
+.form__title-box,
+.news__title-box {
+    max-width: 540px;
+    padding-left: 140px;
+    position: relative;
+}
+
+.services__title-box:before,
+.form__title-box:before,
+.news__title-box:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: #3498db;
+    left: 0;
+    top: 11px;
+}
+
+.services__title,
+.form__title,
+.news__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212020;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+
+.services__text,
+.form__text,
+.news__text {
+    letter-spacing: 0.1px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services__items {
+
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.services__item {
+    min-width: 275px;
+    text-align: center;
+    padding: 30px 0px 40px;
+    max-height: 362px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
+    border-radius: 25px;
+    transition: transform 0.2s;
+}
+
+.services__item-img {
+    border-radius: 25px;
+}
+
+.services__item-title {
+    color: #212020;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 0 10px 0;
+}
+
+.services__item-text {
+    letter-spacing: 0.1px;
+    padding: 0px 30px;
+    margin-bottom: 30px;
+}
+
+.about {
+    background-image: url(../img/fone-about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    padding-top: 45px;
+    font-family: 'Roboto', sans-serif;
+    background-attachment: fixed;
+}
+
+.about__title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.about__title-text {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+
+}
+
+.about__line {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.about__table {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 950px;
+}
+
+th,
+td:first-child {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+}
+
+th,
+td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+    padding: 15px;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+.form {
+    padding-top: 30px;
+}
+
+.form__inner {
+    padding-bottom: 40px;
+    background-image: url(../img/form-doc.png);
+    min-height: 490px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.form__box {
+    max-width: 800px;
+    padding-top: 45px;
+}
+
+.form__box-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__box-left {
+    max-width: 260px;
+    width: 100%;
+}
+
+.form__box-right {
+    max-width: 520px;
+    width: 100%;
+}
+
+.form__box-inner label,
+.form__box-inner input,
+.form__box-inner textarea {
+    display: block;
+    width: 100%;
+}
+
+.form__box-inner label {
+    line-height: 36px;
+    color: #282828;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form__box-inner input {
+    margin-bottom: 8px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+}
+
+.form__box-inner select {
+    outline: none;
+    padding-left: 17px;
+}
+
+.form__box-inner .jq-selectbox.jqselect {
+    display: block;
+    width: 100%;
+}
+
+.form__box-inner .jq-selectbox__select {
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    /*padding-left: 17px;*/
+}
+
+/*.form__box-inner .jq-selectbox__trigger-arrow:before{
+	font-family: 'icomoon' !important;
+    content: "\f105";
+    position: absolute;
+}*/
+.form__box-inner textarea {
+    outline: none;
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    height: 208px;
+    resize: none;
+    margin-bottom: 42px;
+}
+
+.form__box-inner button {
+    background-color: transparent;
+    color: #282828;
+    float: right;
+    cursor: pointer;
+}
+
+.organisation {
+    background-image: url(../img/org-fone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    padding: 55px 0px 40px;
+    font-family: 'Roboto', sans-serif;
+    background-attachment: fixed;
+}
+
+.organisation__title-main {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.organisation__line {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.organisation__inner {
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.organisation__item {
+    max-width: 350px;
+    color: #fff;
+    filter: grayscale(1);
+}
+
+.organisation__item:hover {
+    filter: grayscale(0);
+    transition: filter .2s .2s;
+}
+
+.organisation__title {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.organisation__item-img {
+    width: 100px;
+}
+
+.orghealth {
+    min-height: 400px;
+    padding: 55px 0px 40px;
+}
+
+.orghealth__title-main {
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #5e5e5e;
+}
+
+.strong__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.orghealth__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.spoiler-wrap {
+    background: #fff;
+    margin: 0 0 8px;
+    max-width: 290px;
+    text-align: center;
+}
+
+.spoiler-head {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 7px 10px 7px 10px;
+}
+
+.spoiler-body {
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid black;
+    font-weight: 500;
+}
+
+.text__body {}
+
+.org__btn {
+    padding: 5px 7px 5px 7px;
+    margin-top: 5px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.spoiler-wrap.disabled .spoiler-body {
+    display: none;
+}
+
+.spoiler-wrap.active {
+    border-color: #3498db;
+    border-radius: 25px;
+}
+
+.spoiler-wrap.active .spoiler-head {
+    background: #3498db;
+    color: #fff;
+}
+
+.news {
+    padding: 55px 0px 110px;
+    background-color: #f9f9f9;
+}
+
+.news__btn-link {
+    color: #fff;
+    /* цвет текста */
+    text-decoration: none;
+    /* убирать подчёркивание у ссылок */
+    user-select: none;
+    /* убирать выделение текста */
+    background-color: #3498db;
+    /* фон кнопки */
+    padding: .7em 1.5em;
+    /* отступ от текста */
+    outline: none;
+    /* убирать контур в Mozilla */
+}
+
+.news__btn-link:hover {
+    background: #2d7eb5;
+}
+
+.news__btn-link:active {
+    background: #2d7eb5;
+}
+
+.news__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news__slider {
+    max-width: 535px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 5px 15.36px 0.64px rgba(128, 127, 127, 0.13);
+    padding: 60px 35px 45px 70px;
+    position: relative;
+}
+
+.news__slider:before {
+    content: "\f10e";
+    position: absolute;
+    top: 0;
+    left: 70px;
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 16px;
+    width: 65px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #3498db;
+}
+
+.news__blog {
+    max-width: 260px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.news__images {
+    position: relative;
+}
+
+.news__date {
+    position: absolute;
+    background-color: #3498db;
+    width: 47px;
+    height: 55px;
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 700;
+    top: 0px;
+    left: 10px;
+}
+
+.news__blog-title {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    color: #242424;
+    padding: 12px 0;
+}
+
+.news__blog-text {
+    letter-spacing: 0.1px;
+    color: #5e5e5e;
+}
+
+.news__slider-title {
+    font-size: 18px;
+    line-height: 24px;
+    color: #242424;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.news__slider-text {
+    margin-bottom: 30px;
+}
+
+.news__slider-author {
+    letter-spacing: 0.1px;
+    color: #212020;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.news__slider-inner .slick-btn {
+    top: auto;
+    bottom: -110px;
+}
+
+.news__slider-inner .slick-next {
+    right: -35px;
+}
+
+.news__slider-inner .slick-prev {
+    right: 20px;
+    left: auto;
+}
+
+.news__slider-inner .slick-disabled {
+    border-color: #dadada;
+}
+
+.news__slider-inner .slick-disabled:before {
+    color: #dadada;
+}
+
+.footer__content {
+    background-color: #595959;
+    padding: 20px 0px 30px;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__inner .header__btn {
+    display: inline-block;
+    float: none;
+}
+
+.footer__map {
+    padding-top: 10px;
+}
+
+.footer__map iframe {
+    height: 250px;
+    width: 630px;
+}
+
+.footer__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+}
+
+.footer__text {
+    color: #d3d2d2;
+    margin-bottom: 20px;
+}
+
+.footer__info {
+    min-width: 360px;
+}
+
+.footer__list {
+    padding-top: 10px;
+}
+
+.footer__list li {
+    margin-top: 10px;
+}
+
+.footer__list a {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding-left: 33px;
+    position: relative;
+}
+
+.footer__list a:before {
+    content: "\f003";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-family: "icomoon";
+}
+
+.footer__list .footer__phone:before {
+    content: "\f095";
+    left: 3px;
+}
+
+.footer__list .footer__adress:before {
+    content: "\f041";
+    left: 3px;
+}
+
+.footer__copy {
+    background-color: #303030;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 8px 0;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.header__btn-menu{
+	display: none;
+	font-size: 28px;
+	cursor: pointer;
+	margin-top: 20px;
+}
