@@ -21,11 +21,11 @@
 
 <body>
     <!-- <li><a href="#">ВЫШЕСТОЯЩИЕ ОРГАНИЗАЦИИ</a></li>
-		 <li><a href="#">ОРГАНИЗАЦИИ ЗДРАВООХРАНЕНИЯ ОБЛАСТИ</a></li>
-		 <li><a href="#">РАЗНОЕ</a></li>
-		<li><a href="#">ВОПРОС ОТВЕТ</a></li>
+         <li><a href="#">ОРГАНИЗАЦИИ ЗДРАВООХРАНЕНИЯ ОБЛАСТИ</a></li>
+         <li><a href="#">РАЗНОЕ</a></li>
+        <li><a href="#">ВОПРОС ОТВЕТ</a></li>
 
-	 -->
+     -->
     <a href="#header" class="top__button">
         <img src="img/top.png" alt="">
     </a>
@@ -220,24 +220,24 @@
                         </div>
                     </div>
                     <div class="form__box">
-                        <form>
+                        <form action="mail.php" method="POST">
                             <div class="form__box-inner">
                                 <div class="form__box-left">
                                     <label>
                                         E-mail
-                                        <input type="text">
+                                        <input type="text" name="user_email">
                                     </label>
                                     <label>
                                         Контактный телефон
-                                        <input type="text">
+                                        <input type="text" name="user_phone">
                                     </label>
                                     <label>
                                         ФИО
-                                        <input type="text">
+                                        <input type="text" name="user_name">
                                     </label>
                                     <label>
                                         Тема вопроса
-                                        <select>
+                                        <select name="user_question">
                                             <option>Обращения
                                                 по вопросам
                                                 доступности
@@ -531,7 +531,7 @@
             </div>
         </div>
     </footer>
--->
+    -->
     <!--Модальное окно попапа -->
     <div id="modal">
         <h2>Спасибо!</h2>
