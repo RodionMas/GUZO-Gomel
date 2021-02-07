@@ -62,5 +62,12 @@ $(function() {
     $('.header__btn-menu').on('click', function(){
     	$('.menu ul').slideToggle();
     })
-
+   //Прелоадер
+   window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
 });
